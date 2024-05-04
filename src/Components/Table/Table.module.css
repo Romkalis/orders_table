@@ -1,0 +1,47 @@
+/* ---------------cells-------------- */
+tr {
+    border-bottom: 1px solid grey;
+}
+
+td {
+    margin: 5px;
+    border-bottom: 1px solid grey;
+}
+
+.cell__num {
+    width: 30px;
+    display: inline-block;
+    /* text-align: center; */
+}
+
+.cell__date {
+    /* margin: 10px; */
+}
+
+.cell__client {
+    /* margin: 10px; */
+}
+
+.cell__driver {
+    /* margin: 10px; */
+}
+
+.cell__phone {
+    /* margin: 10px; */
+}
+
+.cell__comment {
+    max-width: 300px;
+    margin: 10px;
+    height: max-content;
+    text-wrap: wrap;
+    display: block;
+    /* text-align: left; */
+}
+
+.cell__status {
+    margin: 10px;
+    /* width: 100px; */
+}
+
+.cell__ati {}

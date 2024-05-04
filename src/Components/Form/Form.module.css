@@ -1,0 +1,6 @@
+.button {
+    margin: 2vw;
+    --g-button-border-color: #f5deb3;
+    --g-button-border-width: 1px;
+    --g-button-border-radius: 3px;
+}
