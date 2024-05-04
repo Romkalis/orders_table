@@ -1,6 +1,35 @@
-.button {
-    margin: 2vw;
-    --g-button-border-color: #f5deb3;
-    --g-button-border-width: 1px;
-    --g-button-border-radius: 3px;
+form {
+    border: 1px solid #808080;
+    padding: 2rem 1rem;
+    border-radius: 0.5rem;
+}
+
+label {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    span {
+        margin-right: 10px;
+    }
+}
+
+.form__input {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    min-width: 220px;
+}
+
+.form__section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+button {
+    margin: 0;
+    margin-left: 40px;
 }

@@ -1,34 +1,104 @@
-import {Button, TextArea, TextInput} from '@gravity-ui/uikit';
-import {DateField} from '@gravity-ui/date-components';
 import s from './Form.module.css';
-import React from 'react';
 
 const Form = function ({data, setData}) {
     const formHandler = (evt: any) => {
         evt.preventDefault();
         const formData = new FormData(evt.target);
         const formDataObject = Object.fromEntries(formData.entries());
-        setData(...data, JSON.parse(JSON.stringify(formDataObject)));
+        setData([...data, JSON.parse(JSON.stringify(formDataObject))]);
     };
     return (
         <>
             <form onSubmit={formHandler} action="#">
-                <TextInput name="number" type="number" placeholder="Номер Заявки" size="l" />
-                <DateField name="date" size="l" label="Дата:" />
-                <TextInput name="client" placeholder="Клиент" size="l" />
-                <TextInput name="driverName" placeholder="Имя водителя" size="l" />
-                <TextInput name="phone" type="tel" placeholder="Телефон" size="l" />
-                <TextArea name="comment" placeholder="Комментарий" size="l" />
-                <TextInput name="status" placeholder="Статус" size="l" value="new" disabled />
-                <TextInput name="aticode" type="number" placeholder="ATI-код" size="l" />
-                <select name="status">
-                    <option value="new">Новая заявка</option>
-                    <option value="active">В работе</option>
-                    <option value="ready">Выполнено</option>
-                </select>
-                <Button type="submit" className={s.button} size="l">
-                    Создать заявку
-                </Button>
+                <div className={s.form__section}>
+                    <label>
+                        <span>Номер Заявки:</span>
+                        <input
+                            className={s.form__input}
+                            name="number"
+                            type="number"
+                            placeholder="Номер Заявки"
+                            required
+                        />
+                    </label>
+                    <label>
+                        <span>Дата:</span>
+                        <input
+                            className={s.form__input}
+                            name="date"
+                            type="date"
+                            placeholder="Дата:"
+                            required
+                        />
+                    </label>
+                    <label>
+                        <span>Клиент:</span>
+                        <input
+                            className={s.form__input}
+                            name="client"
+                            type="text"
+                            placeholder="Клиент"
+                            required
+                        />
+                    </label>
+                </div>
+                <div className={s.form__section}>
+                    <label>
+                        <span>Имя водителя:</span>
+                        <input
+                            className={s.form__input}
+                            name="driverName"
+                            type="text"
+                            placeholder="Имя водителя"
+                            required
+                        />
+                    </label>
+                    <label>
+                        <span>Телефон:</span>
+                        <input
+                            className={s.form__input}
+                            name="phone"
+                            type="tel"
+                            placeholder="Телефон"
+                            required
+                        />
+                    </label>
+                    <label>
+                        <span>Статус:</span>
+                        <select name="status" className={s.form__input}>
+                            <option value="new">Новая заявка</option>
+                            <option value="active">В работе</option>
+                            <option value="ready">Выполнено</option>
+                        </select>
+                    </label>
+                </div>
+                <div className={s.form__section}>
+                    <label>
+                        <span>Комментарий:</span>
+                        <textarea
+                            className={s.form__input}
+                            name="comment"
+                            placeholder="Комментарий"
+                            cols="30"
+                            rows="4"
+                        />
+                    </label>
+                    <div className={s.form__section}>
+                        <label>
+                            <span>ATI-код:</span>
+                            <input
+                                className={s.form__input}
+                                name="aticode"
+                                type="number"
+                                placeholder="ATI-код"
+                                required
+                            />
+                        </label>
+                        <button type="submit" className={s.button}>
+                            Создать заявку
+                        </button>
+                    </div>
+                </div>
             </form>
         </>
     );
