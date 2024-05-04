@@ -1,11 +1,13 @@
+import {FormEvent} from 'react';
 import s from './Form.module.css';
 
 const Form = function ({data, setData}) {
-    const formHandler = (evt: any) => {
+    const formHandler = (evt: FormEvent) => {
         evt.preventDefault();
         const formData = new FormData(evt.target);
         const formDataObject = Object.fromEntries(formData.entries());
-        setData([...data, JSON.parse(JSON.stringify(formDataObject))]);
+
+        setData([...data, formDataObject]);
     };
     return (
         <>
@@ -13,23 +15,11 @@ const Form = function ({data, setData}) {
                 <div className={s.form__section}>
                     <label>
                         <span>Номер Заявки:</span>
-                        <input
-                            className={s.form__input}
-                            name="number"
-                            type="number"
-                            placeholder="Номер Заявки"
-                            required
-                        />
+                        <input className={s.form__input} name="number" type="number" required />
                     </label>
                     <label>
                         <span>Дата:</span>
-                        <input
-                            className={s.form__input}
-                            name="date"
-                            type="date"
-                            placeholder="Дата:"
-                            required
-                        />
+                        <input className={s.form__input} name="date" type="date" required />
                     </label>
                     <label>
                         <span>Клиент:</span>
@@ -45,13 +35,7 @@ const Form = function ({data, setData}) {
                 <div className={s.form__section}>
                     <label>
                         <span>Имя водителя:</span>
-                        <input
-                            className={s.form__input}
-                            name="driverName"
-                            type="text"
-                            placeholder="Имя водителя"
-                            required
-                        />
+                        <input className={s.form__input} name="driverName" type="text" required />
                     </label>
                     <label>
                         <span>Телефон:</span>
@@ -59,7 +43,7 @@ const Form = function ({data, setData}) {
                             className={s.form__input}
                             name="phone"
                             type="tel"
-                            placeholder="Телефон"
+                            placeholder="+79998887776"
                             required
                         />
                     </label>

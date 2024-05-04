@@ -4,13 +4,15 @@
     border-radius: 0.5rem;
 }
 
-table {
+.table {
     border-collapse: collapse;
 }
-th {
+
+.table__header {
     padding: 10px;
 }
-td {
+
+.table__cell {
     border: 1px solid #808080;
     padding: 2px 8px;
 }
