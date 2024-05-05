@@ -16,7 +16,7 @@ const Table = ({data, getEntryToChange}: {data: MockDataItem[]}) => {
 
     return (
         <>
-            <h2>Таблица заявок</h2>
+            <h2>Таблица заявок. Всего заявок: {filteredData.length}</h2>
             <div className={s.table__wrapper}>
                 <table className={s.table}>
                     <THead setStatus={setStatus} />

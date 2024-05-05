@@ -1,32 +1,60 @@
-stack: React, Vite, Typescript, Gravity UI
-
 # React + TypeScript + Vite
+# Запуск проекта: npm run dev.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Проект представляет собой приложение для управления заявками. Оно включает в себя компоненты для отображения таблицы заявок и формы для добавления новых заявок или редактирования существующих.
+# -Компоненты:
+# -App:
+  Принимает массив заявок (mockData) в качестве пропсов.
+  Хранит состояние данных заявок (data) с помощью хука useState.
+  Передает данные заявок и функцию для изменения данных заявки в компоненты Form и Table.
 
-Currently, two official plugins are available:
+# -Form:
+  Отображает форму для добавления новых заявок или редактирования существующих.
+  Получает данные заявки для редактирования через пропс changeEntry.
+  Хранит состояние данных формы (formData) с помощью хука useState.
+  При отправке формы вызывает функцию formHandler, которая добавляет новую заявку или обновляет существующую в зависимости от наличия номера заявки в массиве данных.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# -Table:
+  Отображает таблицу заявок.
+  Фильтрует данные заявок по статусу с помощью хука useState.
+  Получает выбранный статус заявок через пропс status.
+  Передает функцию для изменения выбранного статуса заявок в компонент THead.
+  Выводит строки таблицы с данными заявок из фильтрованного массива.
 
-## Expanding the ESLint configuration
+# -TBody:
+  Отображает тело таблицы заявок.
+  Получает отфильтрованные данные заявок через пропс filteredData.
+  Для каждой заявки выводит соответствующую строку в таблице.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+# -THead:
+  Отображает заголовок таблицы заявок.
+  Позволяет выбрать статус заявок для фильтрации.
+  Передает выбранный статус заявок в компонент Table.
 
-- Configure the top-level `parserOptions` property like this:
+Rest API: Получаем данные в отдбельном файле Data, на их основании создаем 
+в App.tsx состояние с данным с которыми работаем, при редактировании, или изменении данных,
+отправляем на сервер по id измененные данные, либо данные с путым id, для присваивания его на сервере.
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+структура: 
+
+src
+  --assets
+    -Data
+      MockData.ts
+    -Icons
+    -Interfaces
+      Interfaces.ts
+  --Components
+    -Form
+      Form.tsx
+    -Table
+      -TBody
+        TBody.tsx
+      -THead
+        THead.tsx
+  App.tsx
+
+
+
+

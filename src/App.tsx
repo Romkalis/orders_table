@@ -12,7 +12,7 @@ const App = function ({mockData}: {mockData: MockDataItem[]}) {
         const entry = data.find((order) => order.number === orderNumber);
         // здесь получаем объект для изменения из data
         setChangeEntry(entry);
-    };
+    }
 
     return (
         <>

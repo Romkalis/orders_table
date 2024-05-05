@@ -4,22 +4,11 @@ form {
     border-radius: 0.5rem;
 }
 
-label {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-
-    span {
-        margin-right: 10px;
-    }
-}
-
 .form__input {
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
     min-width: 220px;
-    margin-bottom: 10px;
 }
 
 .form__input_error {
@@ -27,7 +16,6 @@ label {
     border: none;
     border-radius: 5px;
     min-width: 220px;
-    margin-bottom: 10px;
     border: 2px solid #ff0000;
     box-sizing: border-box;
 }
@@ -40,11 +28,29 @@ label {
     margin-bottom: 20px;
 }
 
+.form__label {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 10px;
+
+    .label__title {
+        margin-right: 10px;
+    }
+}
+
 .form__button {
     margin: 0;
     margin-left: 40px;
 }
 
+.form__label:first-child {
+    position: relative;
+}
+
 .table__danger {
+    position: absolute;
+    top: -25px;
+    left: 10px;
     color: #ff0000;
 }

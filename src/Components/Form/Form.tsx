@@ -49,37 +49,39 @@ const Form = function ({data, setData, changeEntry}: {data: MockDataItem[]}) {
     return (
         <>
             <h2>Добавить заявку</h2>
-            {errorFlag ? (
-                <span className={s.table__danger}>
-                    Будьте внимательны! Такой номер уже существует.
-                </span>
-            ) : null}
+
             <form onSubmit={formHandler} action="#">
                 <div className={s.form__section}>
-                    <label>
-                        <span>Номер Заявки:</span>
+                    <label className={s.form__label}>
+                        <span className={s.label__title}>Номер Заявки:</span>
                         <input
                             className={s.form__input}
                             onChange={handleChange}
                             value={formData.number || ''}
                             name="number"
                             type="number"
+                            placeholder="пример: 3345"
                             required
                         />
+                        {errorFlag ? (
+                            <small className={s.table__danger}>
+                                Будьте внимательны! Такой номер уже существует.
+                            </small>
+                        ) : null}
                     </label>
-                    <label>
-                        <span>Дата:</span>
+                    <label className={s.form__label}>
+                        <span className={s.label__title}>Дата:</span>
                         <input
                             className={s.form__input}
                             onChange={handleChange}
                             name="date"
-                            type="date"
+                            type="datetime-local"
                             value={formData.date || ''}
                             required
                         />
                     </label>
-                    <label>
-                        <span>Клиент:</span>
+                    <label className={s.form__label}>
+                        <span className={s.label__title}>Клиент:</span>
                         <input
                             onChange={handleChange}
                             className={s.form__input}
@@ -92,8 +94,8 @@ const Form = function ({data, setData, changeEntry}: {data: MockDataItem[]}) {
                     </label>
                 </div>
                 <div className={s.form__section}>
-                    <label>
-                        <span>Имя водителя:</span>
+                    <label className={s.form__label}>
+                        <span className={s.label__title}>Имя водителя:</span>
                         <input
                             className={s.form__input}
                             onChange={handleChange}
@@ -103,8 +105,8 @@ const Form = function ({data, setData, changeEntry}: {data: MockDataItem[]}) {
                             required
                         />
                     </label>
-                    <label>
-                        <span>Телефон:</span>
+                    <label className={s.form__label}>
+                        <span className={s.label__title}>Телефон:</span>
                         <input
                             onChange={handleChange}
                             className={s.form__input}
@@ -115,8 +117,8 @@ const Form = function ({data, setData, changeEntry}: {data: MockDataItem[]}) {
                             required
                         />
                     </label>
-                    <label>
-                        <span>Статус:</span>
+                    <label className={s.form__label}>
+                        <span className={s.label__title}>Статус:</span>
                         <select
                             name="status"
                             onChange={handleChange}
@@ -130,8 +132,8 @@ const Form = function ({data, setData, changeEntry}: {data: MockDataItem[]}) {
                     </label>
                 </div>
                 <div className={s.form__section}>
-                    <label>
-                        <span>Комментарий:</span>
+                    <label className={s.form__label}>
+                        <span className={s.label__title}>Комментарий:</span>
                         <textarea
                             className={s.form__input}
                             onChange={handleChange}
@@ -143,15 +145,15 @@ const Form = function ({data, setData, changeEntry}: {data: MockDataItem[]}) {
                         />
                     </label>
                     <div className={s.form__section}>
-                        <label>
-                            <span>ATI-код:</span>
+                        <label className={s.form__label}>
+                            <span className={s.label__title}>ATI-код:</span>
                             <input
                                 onChange={handleChange}
                                 className={s.form__input}
                                 name="aticode"
                                 type="number"
                                 value={formData.aticode || ''}
-                                placeholder="ATI-код"
+                                placeholder="ATI-код: 1234"
                                 required
                             />
                         </label>
