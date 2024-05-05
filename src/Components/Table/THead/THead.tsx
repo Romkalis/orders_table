@@ -14,7 +14,7 @@ export const THead = ({setStatus}) => {
                     <select
                         onChange={(evt) => setStatus(evt.target.value)}
                         className={s.table__select}
-                        value={status}
+                        // value={status}
                     >
                         <option value="">Все заявки</option>
                         <option value="new">Новая</option>

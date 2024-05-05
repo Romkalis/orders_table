@@ -2,3 +2,9 @@
     border: 1px solid #808080;
     padding: 2px 8px;
 }
+
+.table__cell:first-child,
+.table__cell:nth-child(7),
+.table__cell:nth-child(8) {
+    text-align: center;
+}
