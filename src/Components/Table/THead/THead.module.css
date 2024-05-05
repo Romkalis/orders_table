@@ -1,0 +1,9 @@
+.table__select {
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.table__header {
+    padding: 10px;
+}

@@ -1,5 +1,5 @@
 export interface MockDataItem {
-    number: number;
+    number: string;
     date: string;
     client: string;
     driverName: string;

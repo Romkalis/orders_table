@@ -19,6 +19,17 @@ label {
     border: none;
     border-radius: 5px;
     min-width: 220px;
+    margin-bottom: 10px;
+}
+
+.form__input_error {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    min-width: 220px;
+    margin-bottom: 10px;
+    border: 2px solid #ff0000;
+    box-sizing: border-box;
 }
 
 .form__section {
@@ -29,7 +40,11 @@ label {
     margin-bottom: 20px;
 }
 
-button {
+.form__button {
     margin: 0;
     margin-left: 40px;
+}
+
+.table__danger {
+    color: #ff0000;
 }

@@ -2,7 +2,7 @@ import {MockDataItem} from '../Interfaces/Interfaces';
 
 export const mockData: MockDataItem[] = [
     {
-        number: 1,
+        number: '1',
         date: '2024-05-02',
         client: 'ООО "Восток-Запад"',
         driverName: 'Иванов Иван Иванович',
@@ -12,7 +12,7 @@ export const mockData: MockDataItem[] = [
         aticode: '1234',
     },
     {
-        number: 2,
+        number: '2',
         date: '2024-05-02',
         client: 'ИП Петров',
         driverName: 'Сидорова Мария Петровна',
@@ -22,7 +22,7 @@ export const mockData: MockDataItem[] = [
         aticode: '3345',
     },
     {
-        number: 3,
+        number: '3',
         date: '2024-05-02',
         client: 'АО "Сибнефть"',
         driverName: 'Кузнецов Борис Сергеевич',
@@ -32,7 +32,7 @@ export const mockData: MockDataItem[] = [
         aticode: '4436',
     },
     {
-        number: 4,
+        number: '4',
         date: '2024-05-01',
         client: 'ООО "Луч"',
         driverName: 'Васильева Ольга Николаевна',
@@ -42,7 +42,7 @@ export const mockData: MockDataItem[] = [
         aticode: '2345',
     },
     {
-        number: 5,
+        number: '5',
         date: '2024-05-01',
         client: 'ИП Сидоров',
         driverName: 'Петров Николай Александрович',
@@ -53,7 +53,7 @@ export const mockData: MockDataItem[] = [
         aticode: '5666',
     },
     {
-        number: 6,
+        number: '6',
         date: '2024-05-01',
         client: 'АО "Газпром"',
         driverName: 'Соколова Ирина Дмитриевна',
@@ -64,7 +64,7 @@ export const mockData: MockDataItem[] = [
         aticode: '1437',
     },
     {
-        number: 7,
+        number: '7',
         date: '2024-04-30',
         client: 'ООО "Альфа"',
         driverName: 'Попов Сергей Викторович',
